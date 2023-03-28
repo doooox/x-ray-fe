@@ -1,0 +1,29 @@
+.container{
+    background-image: url("../../../public/backgrounds/welcom/welcom.jpg");
+}
+
+.welcomeButton button{
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    margin: 0 10rem;
+    background-image: linear-gradient(to right, #031299 10%, #000000 51%, #a397a1 100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 50px #0044fd;
+    border-radius: 10px;
+    display: block;
+    border: none;
+}
+.linkButton{
+    text-decoration: none;
+}
+.welcomeButton button:hover{
+    cursor: pointer;
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}  
