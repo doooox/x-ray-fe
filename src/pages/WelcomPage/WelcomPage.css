@@ -26,4 +26,16 @@
     background-position: right center;
     color: #fff;
     text-decoration: none;
-}  
+} 
+@media (max-width: 768px) {
+     .welcomeButton button {
+         margin: 0 5rem;
+     }
+ }
+
+ @media (max-width: 576px) {
+     .welcomeButton button {
+         margin: 0 2rem;
+         font-size: 1rem;
+     }
+ }

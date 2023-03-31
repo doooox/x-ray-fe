@@ -7,13 +7,27 @@ export const ROUTES = {
     REGISTER: "/register",
     LOGIN: "/login",
     LOGOUT: "/logout",
-    DPRACTICE: "/practices"
+    DPRACTICE: "/dpractice",
+    SINGLEDENTALPRACTICE: "/dpractice/:_id",
+    ADDDENTALPRACTICE: "/dpractice/add",
+    DOCTOR: "/doctor",
+    SINGLEDOCTOR: "/doctor/:_id",
+    ADDDOCTOR: "/doctor/create/:_id",
+    PATIENT: "/patient",
+    SINGLEPATIENT: "/patient/:_id",
+    ADDPATIENT: "/patient/create/:_id"
 }
 
 export const ENDPOINTS = {
     REGISTER: "/auth/register",
     LOGIN: "/auth/login",
-    LOGOUT: "/auth/logout"
+    LOGOUT: "/auth/logout",
+    DENTALPRACTICES: "/dpractice",
+    ADDDENTALPRACTICE: "/dpractice/create",
+    DOCTOR: "/doctor",
+    ADDDOCTOR: "/doctor/create",
+    PATIENT: "/patient",
+    ADDPATIENT: "/patient/create"
 }
 export const NAVIGATION_ROUTES: IRoute[] = [
     {
@@ -55,6 +69,22 @@ export const NAVIGATION_ROUTES: IRoute[] = [
             requiredAuth: true,
             guestOnly: false
         }
+    },
+    {
+        name: "Single Dental practices",
+        path: ROUTES.SINGLEDENTALPRACTICE,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
+    {
+        name: "Add Dental practices",
+        path: ROUTES.ADDDENTALPRACTICE,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
     }
 ]
 export type StorageKeys = "user" | "token"
@@ -69,3 +99,10 @@ export const DEFAULT_QUERY_OPTIONS = {
         },
     },
 };
+
+export const QUERY_KEYS = {
+    DENTALPRACTISEC: "dpractice",
+    SINGLEDENTALPRACTICE: "dpracticeSingle",
+    DOCTOR: "doctor",
+    PATIENT: "patient"
+}
