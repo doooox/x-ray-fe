@@ -24,7 +24,6 @@ const LoginPage = () => {
   });
 
   const onSubmitHandler = (data: ILogin) => {
-    console.log(data);
     mutate(data);
   };
 

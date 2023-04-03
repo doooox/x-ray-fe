@@ -5,11 +5,11 @@ import { doctorService } from "../../../services/X-ray/DoctroService";
 import { IAddDoctor } from "../../../types/doctor.types";
 import { ROUTES } from "../../../utils/static";
 import "./AddDoctorPage.css";
+import useAuthGuard from "../../../hooks/useAuthGuard";
 
 const AddDoctorPage = () => {
+  useAuthGuard();
   const { _id } = useParams();
-  console.log(_id);
-
   const navigate = useNavigate();
   const {
     register,
@@ -26,7 +26,6 @@ const AddDoctorPage = () => {
   });
   const onSubmit: SubmitHandler<IAddDoctor> = (data) => {
     if (!_id) {
-      console.log("no Id");
       return;
     }
     const payload = {

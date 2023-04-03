@@ -1,11 +1,13 @@
 import { IDentalPractice } from "./dentalPractice.type";
 import { IDoctor } from "./doctor.types";
+import { IXray } from "./xRay.types";
 
 export interface IPatientDraft {
     firstName: string,
     lastName: string,
     doctor?: IDoctor,
-    dentalPractice?: IDentalPractice
+    dentalPractice?: IDentalPractice,
+    xRays?: IXray[],
 }
 
 export interface IPatient extends IPatientDraft {

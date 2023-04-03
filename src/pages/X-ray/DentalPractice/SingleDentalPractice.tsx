@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useAuthGuard from "../../../hooks/useAuthGuard";
 import { useGetSingleDentalPracticeQuery } from "../../../queries/dentalPractice.query";

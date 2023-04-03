@@ -1,4 +1,3 @@
-import { Route } from "react-router-dom";
 import { IRoute } from "../types/navigation.types";
 
 
@@ -15,7 +14,9 @@ export const ROUTES = {
     ADDDOCTOR: "/doctor/create/:_id",
     PATIENT: "/patient",
     SINGLEPATIENT: "/patient/:_id",
-    ADDPATIENT: "/patient/create/:_id"
+    ADDPATIENT: "/patient/create/:_id",
+    XRAY: "/xray",
+    SINGLEXRAYIMAGE: "/xray/:_id",
 }
 
 export const ENDPOINTS = {
@@ -27,7 +28,9 @@ export const ENDPOINTS = {
     DOCTOR: "/doctor",
     ADDDOCTOR: "/doctor/create",
     PATIENT: "/patient",
-    ADDPATIENT: "/patient/create"
+    ADDPATIENT: "/patient/create",
+    ADDXRAYIMAGE: "/xray/add",
+    GETXRAY: "/xray",
 }
 export const NAVIGATION_ROUTES: IRoute[] = [
     {
@@ -72,7 +75,7 @@ export const NAVIGATION_ROUTES: IRoute[] = [
     },
     {
         name: "Single Dental practices",
-        path: ROUTES.SINGLEDENTALPRACTICE,
+        path: ROUTES.DOCTOR,
         perms: {
             requiredAuth: true,
             guestOnly: false
@@ -85,8 +88,49 @@ export const NAVIGATION_ROUTES: IRoute[] = [
             requiredAuth: true,
             guestOnly: false
         }
-    }
+    },
+    {
+        name: "Single Doctor",
+        path: ROUTES.SINGLEDOCTOR,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
+    {
+        name: "Add Doctor",
+        path: ROUTES.ADDDOCTOR,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
+    {
+        name: "Single Patient",
+        path: ROUTES.SINGLEPATIENT,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
+    {
+        name: "Add Patient",
+        path: ROUTES.ADDPATIENT,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
+    {
+        name: "Add X-ray-image",
+        path: ROUTES.SINGLEXRAYIMAGE,
+        perms: {
+            requiredAuth: true,
+            guestOnly: false
+        }
+    },
 ]
+
 export type StorageKeys = "user" | "token"
 
 export const DEFAULT_QUERY_OPTIONS = {
@@ -104,5 +148,6 @@ export const QUERY_KEYS = {
     DENTALPRACTISEC: "dpractice",
     SINGLEDENTALPRACTICE: "dpracticeSingle",
     DOCTOR: "doctor",
-    PATIENT: "patient"
+    PATIENT: "patient",
+    XRAY: "xray"
 }

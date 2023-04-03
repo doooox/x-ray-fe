@@ -1,16 +1,27 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetDoctorQuery } from "../../../queries/doctor.query";
 import { ENDPOINTS, ROUTES } from "../../../utils/static";
+import "./SingleDoctorPage.css";
+import useAuthGuard from "../../../hooks/useAuthGuard";
 
 const SingleDoctorPage = () => {
+  useAuthGuard();
   const { _id } = useParams();
   const navigate = useNavigate();
   const { data: doctor } = useGetDoctorQuery(_id || "");
-
   return (
-    <div>
-      <h1>{doctor?.firstName}</h1>
+    <div className="single-doctor-page">
+      <h1>
+        {doctor?.firstName} {doctor?.lastName}
+      </h1>
+      <button
+        className="single-doctor-page__buttons"
+        onClick={() => {
+          navigate(`${ENDPOINTS.ADDPATIENT}/${_id}`);
+        }}
+      >
+        Add patient
+      </button>
       <ul>
         {doctor?.patients?.map((patient) => (
           <li
@@ -23,11 +34,11 @@ const SingleDoctorPage = () => {
         ))}
       </ul>
       <button
-        onClick={() => {
-          navigate(`${ENDPOINTS.ADDPATIENT}/${_id}`);
-        }}
+        onClick={() =>
+          navigate(`${ROUTES.DPRACTICE}/${doctor?.dentalPractice?._id}`)
+        }
       >
-        Add patient
+        Back
       </button>
     </div>
   );

@@ -1,0 +1,52 @@
+.single-doctor-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.single-doctor-page h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.single-doctor-page ul {
+    list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 600px;
+}
+
+.single-doctor-page li {
+    background-color: #f8f8f8;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-in-out;
+        text-align: center;
+        font-size: 1.2rem;
+}
+
+.single-doctor-page li:hover {
+    transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
+}
+
+.single-doctor-page button {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+.single-doctor-page button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.692);
+}

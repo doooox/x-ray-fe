@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IAddPatient } from "../../../types/patient.types";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -6,9 +5,10 @@ import { useMutation } from "@tanstack/react-query";
 import { patientService } from "../../../services/X-ray/PatientService";
 import { ENDPOINTS } from "../../../utils/static";
 import { useGetDoctorQuery } from "../../../queries/doctor.query";
-import { useGetSingleDentalPracticeQuery } from "../../../queries/dentalPractice.query";
+import useAuthGuard from "../../../hooks/useAuthGuard";
 
 const AddPatientPage = () => {
+  useAuthGuard();
   const navigate = useNavigate();
   const { _id } = useParams();
 
@@ -29,19 +29,16 @@ const AddPatientPage = () => {
   const { data: doctor } = useGetDoctorQuery(_id || "");
 
   const onSubmit: SubmitHandler<IAddPatient> = (data) => {
-    console.log("1");
     if (!doctor) return;
-    console.log("2");
+
     const payload = {
       firstName: data.firstName,
       lastName: data.lastName,
       doctorId: doctor?._id,
       dentalPracticeId: doctor.dentalPractice?._id,
     };
-    console.log("3");
 
     add(payload);
-    console.log("4");
   };
 
   return (

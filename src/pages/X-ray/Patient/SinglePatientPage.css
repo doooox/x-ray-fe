@@ -1,0 +1,91 @@
+.patient-page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.patient-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.patient-page-info {
+    margin: 2rem;
+}
+
+.patient-page__title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.patient-page h5 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.patient-page__xrays {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.patient-page__xray-image {
+    display: block;
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.692);
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 20px 5px;
+    transition: all 0.35s;
+}
+
+.patient-page__form {
+    display: block;
+    margin-top: 40px;
+}
+
+.patient-page__form label {
+    font-size: 16px;
+}
+
+.patient-page__xray-image:hover {
+    transform: translateY(-25px)
+}
+
+.patient-page button {
+    background-color: #f8f8f8;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.patient-page button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.692);
+}
+
+@media only screen and (max-width: 768px) {
+    .patient-page-container {
+        flex-direction: column-reverse;
+    }
+    .patient-page__form {
+        margin-top: 40px;
+    }
+
+    .patient-page__xray-image {
+        margin: 20px 0;
+    }
+
+    .patient-page__form {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}

@@ -3,7 +3,6 @@ import { useGetDentalPracticesQuery } from "../../../queries/dentalPractice.quer
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../utils/static";
 import "./DentalPracticePage.css";
-import React from "react";
 
 const DentalPracticePage = () => {
   useAuthGuard();

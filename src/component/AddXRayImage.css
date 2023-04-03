@@ -1,0 +1,56 @@
+.add-xray-image {
+    height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-xray-image__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.add-xray-image__form-group {
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.add-xray-image__error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.add-xray-image__button {
+    background-color: #f8f8f8;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-in-out;
+        text-align: center;
+        font-size: 1.2rem;
+}
+
+.add-xray-image__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.692);
+}
+
+@media only screen and (max-width: 768px) {
+    .add-xray-image{
+        max-height: 15vh;
+        margin-bottom: -50px;
+        display: flex;
+        align-items: center;
+    }
+    .add-xray-image__title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .add-xray-image__button {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}

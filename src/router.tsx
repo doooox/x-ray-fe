@@ -11,6 +11,7 @@ import SingleDoctorPage from "./pages/X-ray/Doctor/SingleDoctorPage";
 import AddDoctorPage from "./pages/X-ray/Doctor/AddDoctorPage";
 import SinglePatientPage from "./pages/X-ray/Patient/SinglePatientPage";
 import AddPatientPage from "./pages/X-ray/Patient/AddPatientPage";
+import XRayImagePage from "./pages/X-ray/XRayImage/XRayImagePage";
 
 const AppRoute = () => {
   return (
@@ -32,6 +33,7 @@ const AppRoute = () => {
       <Route path={ROUTES.ADDDOCTOR} element={<AddDoctorPage />} />
       <Route path={ROUTES.SINGLEPATIENT} element={<SinglePatientPage />} />
       <Route path={ROUTES.ADDPATIENT} element={<AddPatientPage />} />
+      <Route path={ROUTES.SINGLEXRAYIMAGE} element={<XRayImagePage />} />
       <Route path="*" element={<p>Page not found</p>} />
     </Routes>
   );
