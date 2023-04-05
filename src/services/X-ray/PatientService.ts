@@ -1,4 +1,5 @@
-import { IAddPatient, IPatient, IPatientDraft } from "../../types/patient.types";
+import { IAddPatient, IPatient } from "../../types/patient.types";
+import { ISearchPatient } from "../../types/search.type";
 import { ENDPOINTS } from "../../utils/static";
 import { getItemFromLocalStorage } from "../../utils/storage";
 import { httpService } from "../HttpService";
@@ -6,8 +7,19 @@ import { httpService } from "../HttpService";
 class PatientService {
     private httpService = httpService
 
+    getAllPatiens = async () => {
+        const token = getItemFromLocalStorage("token");
+        return await this.httpService.request<IPatient[]>({
+            url: ENDPOINTS.PATIENT,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+    }
+
     getPatient = async (_id: string) => {
-        const token = getItemFromLocalStorage("token")
+        const token = getItemFromLocalStorage("token");
         return await this.httpService.request<IPatient>({
             url: `${ENDPOINTS.PATIENT}/${_id}`,
             method: "GET",
@@ -29,6 +41,16 @@ class PatientService {
         })
     }
 
+    getSearchedPatients = async (query: string,) => {
+        const token = getItemFromLocalStorage("token");
+        return await this.httpService.request<ISearchPatient[]>({
+            url: `${ENDPOINTS.SEARCHPATIENT}?search=${query}`,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+    }
 }
 
 export const patientService = new PatientService()

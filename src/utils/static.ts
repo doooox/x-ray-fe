@@ -25,10 +25,13 @@ export const ENDPOINTS = {
     LOGOUT: "/auth/logout",
     DENTALPRACTICES: "/dpractice",
     ADDDENTALPRACTICE: "/dpractice/create",
-    DOCTOR: "/doctor",
+    SEARCHDENTALPRACTICE: "/dpractice/search",
+    DOCTOR: "/doctor/",
     ADDDOCTOR: "/doctor/create",
+    SEARCHDOCTOR: "/doctor/search",
     PATIENT: "/patient",
     ADDPATIENT: "/patient/create",
+    SEARCHPATIENT: "/patient/search",
     ADDXRAYIMAGE: "/xray/add",
     GETXRAY: "/xray",
 }
@@ -147,7 +150,13 @@ export const DEFAULT_QUERY_OPTIONS = {
 export const QUERY_KEYS = {
     DENTALPRACTISEC: "dpractice",
     SINGLEDENTALPRACTICE: "dpracticeSingle",
+    DENTAPPRACTICESEARCH: "searchedDentalPractice",
     DOCTOR: "doctor",
+    DOCTORS: "doctors",
+    DOCTORSEARCH: "searchedDoctor",
     PATIENT: "patient",
+    PATIENTS: "patients",
+    PATIENTSEARCH: "searchedPatient",
     XRAY: "xray"
+
 }

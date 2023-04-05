@@ -3,6 +3,7 @@ import { useGetDoctorQuery } from "../../../queries/doctor.query";
 import { ENDPOINTS, ROUTES } from "../../../utils/static";
 import "./SingleDoctorPage.css";
 import useAuthGuard from "../../../hooks/useAuthGuard";
+import PatientSearchComponent from "../../../component/PatientSearchComponent";
 
 const SingleDoctorPage = () => {
   useAuthGuard();
@@ -11,6 +12,7 @@ const SingleDoctorPage = () => {
   const { data: doctor } = useGetDoctorQuery(_id || "");
   return (
     <div className="single-doctor-page">
+      <PatientSearchComponent />
       <h1>
         {doctor?.firstName} {doctor?.lastName}
       </h1>

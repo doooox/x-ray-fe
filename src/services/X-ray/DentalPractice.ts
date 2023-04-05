@@ -1,7 +1,9 @@
 import { IDentalPractice, IDentalPracticeDraft } from "../../types/dentalPractice.type";
+import { ISearchDentalPractice } from "../../types/search.type";
 import { ENDPOINTS } from "../../utils/static";
 import { getItemFromLocalStorage } from "../../utils/storage";
 import { httpService } from "../HttpService";
+
 
 class DentalPracticeServise {
     private httpService = httpService
@@ -36,6 +38,18 @@ class DentalPracticeServise {
                 Authorization: `Bearer ${token}`,
             },
         })
+    }
+
+    getSearcherdDentalPractice = async (query: string) => {
+        const token = getItemFromLocalStorage("token");
+        return await this.httpService.request<ISearchDentalPractice[]>({
+            url: `${ENDPOINTS.SEARCHDENTALPRACTICE}?search=${query}`,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+
     }
 }
 

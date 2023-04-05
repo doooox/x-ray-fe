@@ -3,6 +3,7 @@ import { useGetDentalPracticesQuery } from "../../../queries/dentalPractice.quer
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../utils/static";
 import "./DentalPracticePage.css";
+import DentalPracticeSearchComponent from "../../../component/DentalPracticeSearchComponent";
 
 const DentalPracticePage = () => {
   useAuthGuard();
@@ -11,6 +12,7 @@ const DentalPracticePage = () => {
 
   return (
     <div className="dental-practice-page">
+      <DentalPracticeSearchComponent />
       <h1 className="page-title">Dental Practices</h1>
       <ul className="practice-list">
         {dentalPractices?.map((practice) => (

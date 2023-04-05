@@ -1,8 +1,7 @@
 .container{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to right bottom, #4572b7, #507ec0, #5c8bc9, #6897d2, #75a4db, #88a3dc, #99a3da, #a9a2d8, #bd94c2, #c788a7, #c8808b, #be7d70);
-    background-position: center;
+    background-image: linear-gradient(to bottom, #4572b7, #5c8bc9, #75a4db);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -39,6 +38,11 @@
     border-radius: 0.4rem;
     color: #313131;
 }
+
+.form-wrapper input:hover {
+    box-shadow: 0px 0px 10px #4572b7;
+}
+
 .form-wrapper button {
     height: 2rem;
     width: 20.5rem;

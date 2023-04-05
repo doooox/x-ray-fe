@@ -1,0 +1,45 @@
+.navigation {
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li:not(:last-child) {
+    margin-right: 16px;
+}
+
+.navigation a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+.nav-children {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+@media (max-width: 800px) {
+.navigation ul{
+        margin-right: 25px;
+    }
+    
+}
+
+@media (max-width: 653) {
+   .navigation li{
+    font-size: 0.5rem;
+   }
+}

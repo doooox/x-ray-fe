@@ -55,3 +55,8 @@
         font-size: 0.8rem;
     }
 }
+@media only screen and (max-width: 600px) {
+    .practice-name {
+        font-size: 2rem;
+    }
+}

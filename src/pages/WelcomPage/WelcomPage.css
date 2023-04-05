@@ -1,5 +1,5 @@
 .container{
-    background-image: url("../../../public/backgrounds/welcom/welcom.jpg");
+background-image: linear-gradient(to bottom, #4572b7, #5c8bc9, #75a4db);
 }
 
 .welcomeButton button{
