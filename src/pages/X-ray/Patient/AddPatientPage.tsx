@@ -6,6 +6,7 @@ import { patientService } from "../../../services/X-ray/PatientService";
 import { ENDPOINTS } from "../../../utils/static";
 import { useGetDoctorQuery } from "../../../queries/doctor.query";
 import useAuthGuard from "../../../hooks/useAuthGuard";
+import "./AddPatientPage.css";
 
 const AddPatientPage = () => {
   useAuthGuard();
@@ -22,7 +23,7 @@ const AddPatientPage = () => {
   const { mutate: add } = useMutation(patientService.addPatient, {
     onSuccess: () => {
       reset();
-      navigate(`${ENDPOINTS.DOCTOR}/${_id}`);
+      navigate(`${ENDPOINTS.DOCTOR}${_id}`);
     },
   });
 
@@ -42,7 +43,7 @@ const AddPatientPage = () => {
   };
 
   return (
-    <div>
+    <div className="add-patient-page">
       <h1>Add Patient</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
